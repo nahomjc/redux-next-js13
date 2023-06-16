@@ -1,10 +1,14 @@
 "use client";
 import React, { useState } from "react";
-
+import { logIn, logOut } from "@/redux/features/auth-slice";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "@/redux/store";
 const LogIn = () => {
   const [username, setUsername] = useState("");
-
-  const onClickLogIn = () => {};
+  const dispatch = useDispatch<AppDispatch>();
+  const onClickLogIn = () => {
+    dispatch(logIn(username));
+  };
   const onClickToggle = () => {};
   const onClickLogOut = () => {};
   return (
@@ -12,7 +16,7 @@ const LogIn = () => {
       <input type="text" onChange={(e) => setUsername(e.target.value)} />
 
       <br></br>
-      <button> Log In</button>
+      <button onClick={onClickLogIn}> Log In</button>
       <br></br>
       <button>Log Out</button>
       <br></br>
