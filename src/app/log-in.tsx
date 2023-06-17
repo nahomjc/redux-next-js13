@@ -23,7 +23,12 @@ const LogIn = () => {
       <br></br>
       <button onClick={onClickLogIn}> Log In</button>
       <br></br>
-      <button>Log Out</button>
+      <button
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md
+      "
+      >
+        Log Out
+      </button>
       <br></br>
       {isAuthenticated && (
         <button onClick={onClickToggle}>Toggle moderator status</button>
